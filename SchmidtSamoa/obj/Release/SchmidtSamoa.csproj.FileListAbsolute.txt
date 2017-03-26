@@ -1,0 +1,9 @@
+C:\Master\Sem2\ProiectTAS\SchmidtSamoa\SchmidtSamoa\bin\Release\SchmidtSamoa.exe.config
+C:\Master\Sem2\ProiectTAS\SchmidtSamoa\SchmidtSamoa\bin\Release\SchmidtSamoa.exe
+C:\Master\Sem2\ProiectTAS\SchmidtSamoa\SchmidtSamoa\bin\Release\SchmidtSamoa.pdb
+C:\Master\Sem2\ProiectTAS\SchmidtSamoa\SchmidtSamoa\bin\Release\BouncyCastle.Crypto.dll
+C:\Master\Sem2\ProiectTAS\SchmidtSamoa\SchmidtSamoa\obj\Release\SchmidtSamoa.Form1.resources
+C:\Master\Sem2\ProiectTAS\SchmidtSamoa\SchmidtSamoa\obj\Release\SchmidtSamoa.Properties.Resources.resources
+C:\Master\Sem2\ProiectTAS\SchmidtSamoa\SchmidtSamoa\obj\Release\SchmidtSamoa.csproj.GenerateResource.Cache
+C:\Master\Sem2\ProiectTAS\SchmidtSamoa\SchmidtSamoa\obj\Release\SchmidtSamoa.exe
+C:\Master\Sem2\ProiectTAS\SchmidtSamoa\SchmidtSamoa\obj\Release\SchmidtSamoa.pdb
