@@ -8,3 +8,12 @@ C:\Master\Sem2\ProiectTAS\SchmidtSamoa\SchmidtSamoa\obj\Debug\SchmidtSamoa.cspro
 C:\Master\Sem2\ProiectTAS\SchmidtSamoa\SchmidtSamoa\obj\Debug\SchmidtSamoa.exe
 C:\Master\Sem2\ProiectTAS\SchmidtSamoa\SchmidtSamoa\obj\Debug\SchmidtSamoa.pdb
 C:\Master\Sem2\ProiectTAS\SchmidtSamoa\SchmidtSamoa\bin\Debug\BouncyCastle.Crypto.dll
+C:\MyStuff\Master\Sem2\ProiectTAS\SchmidtSamoa\SchmidtSamoa\bin\Debug\SchmidtSamoa.exe.config
+C:\MyStuff\Master\Sem2\ProiectTAS\SchmidtSamoa\SchmidtSamoa\obj\Debug\SchmidtSamoa.exe
+C:\MyStuff\Master\Sem2\ProiectTAS\SchmidtSamoa\SchmidtSamoa\obj\Debug\SchmidtSamoa.pdb
+C:\MyStuff\Master\Sem2\ProiectTAS\SchmidtSamoa\SchmidtSamoa\bin\Debug\SchmidtSamoa.exe
+C:\MyStuff\Master\Sem2\ProiectTAS\SchmidtSamoa\SchmidtSamoa\bin\Debug\SchmidtSamoa.pdb
+C:\MyStuff\Master\Sem2\ProiectTAS\SchmidtSamoa\SchmidtSamoa\bin\Debug\BouncyCastle.Crypto.dll
+C:\MyStuff\Master\Sem2\ProiectTAS\SchmidtSamoa\SchmidtSamoa\obj\Debug\SchmidtSamoa.Form1.resources
+C:\MyStuff\Master\Sem2\ProiectTAS\SchmidtSamoa\SchmidtSamoa\obj\Debug\SchmidtSamoa.Properties.Resources.resources
+C:\MyStuff\Master\Sem2\ProiectTAS\SchmidtSamoa\SchmidtSamoa\obj\Debug\SchmidtSamoa.csproj.GenerateResource.Cache

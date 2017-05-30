@@ -16,8 +16,9 @@ namespace SchmidtSamoa
     {
         SchmidtSamoa sSamoa;
         RSACryptoServiceProvider rsa;
-        private const int Count = 100;
+        private const int Count = 10;
         private static Stopwatch stopWatch = new Stopwatch();
+        private byte[] rsaEncryptedMessage = new byte[128];
        
 
         public Form1()
@@ -31,14 +32,11 @@ namespace SchmidtSamoa
        
         private  void InitSchmidtSamoa(int keySize)
         {
-            sSamoa = new SchmidtSamoa(keySize);
-            int i;
-            
             stopWatch.Reset();
             stopWatch.Start();
-            for (i = 0; i < Count; i++)
+            for (int i = 0; i < Count; i++)
             {
-                sSamoa = new SchmidtSamoa(keySize);
+            sSamoa = new SchmidtSamoa(keySize);
             }
             stopWatch.Stop();
             lblSsKeyGenTime.Text = (stopWatch.ElapsedTicks / (10 * Count)).ToString() + " ms";
@@ -46,48 +44,44 @@ namespace SchmidtSamoa
 
         private void InitRSA(int keySize)
         {
-            rsa = new RSACryptoServiceProvider(keySize);
-            int i;
+            //rsa = new RSACryptoServiceProvider(keySize);
             stopWatch.Reset();
             stopWatch.Start();
-           for(i=0; i< Count; i++)
-           {
-               rsa = new RSACryptoServiceProvider(keySize);
-           }
-           var size = rsa.KeySize;
-           stopWatch.Stop();
-           lblRSAKeyGenTime.Text = (stopWatch.ElapsedTicks / (10 * Count)).ToString() + "ms";
+            for (int i = 0; i < Count; i++)
+            {
+                rsa = new RSACryptoServiceProvider(keySize);
+            }
+            var size = rsa.KeySize;
+            stopWatch.Stop();
+            lblRSAKeyGenTime.Text = (stopWatch.ElapsedTicks / (10 * Count)).ToString() + "ms";
         }
 
         private void buttonEncrypt_Click(object sender, EventArgs e)
         {
             var messageInBytes = Encoding.Default.GetBytes(textBoxMessage.Text);
-            var encryptedMessage = sSamoa.Encrypt(messageInBytes);
-          
             stopWatch.Reset();
             stopWatch.Start();
             for (var i = 0; i < Count; i++)
             {
-                encryptedMessage = sSamoa.Encrypt(messageInBytes);
-              
+            var encryptedMessage = sSamoa.Encrypt(messageInBytes);
             }
             stopWatch.Stop();
 
-            ChipertextBox.Text = Encoding.Default.GetString(encryptedMessage);
-
+            //ChipertextBox.Text = Encoding.Default.GetString(encryptedMessage);
             lblSsEncTime.Text = (stopWatch.ElapsedTicks / (10 * Count)).ToString() + " ms";
 
-            //rsa
+
+            // RSA
             var messageInBytesRSA = Encoding.Default.GetBytes(textBoxMessage.Text);
-            var encryptedMessageByRSA = rsa.Encrypt(messageInBytesRSA, true);
             stopWatch.Reset();
             stopWatch.Start();
-            for (var i = 0; i < Count; i++)
+            for (int i = 0; i < Count; i++)
             {
-                encryptedMessageByRSA = rsa.Encrypt(messageInBytes, true);
+            rsaEncryptedMessage = rsa.Encrypt(messageInBytesRSA, true);
+
             }
             stopWatch.Stop();
-            ChipertextBox.Text = Encoding.Default.GetString(encryptedMessageByRSA);
+            ChipertextBox.Text = Encoding.Default.GetString(rsaEncryptedMessage);
             lblRSAencTime.Text = (stopWatch.ElapsedTicks / (10 * Count)).ToString() + " ms";
 
         }
@@ -101,29 +95,28 @@ namespace SchmidtSamoa
             stopWatch.Start();
             for (var i = 0; i < Count; i++)
             {
-                decryptedMessage = sSamoa.Decrypt(encryptedMessage);
+             decryptedMessage = sSamoa.Decrypt(encryptedMessage);
             }
             stopWatch.Stop();
 
             txtPlainText.Text = Encoding.Default.GetString(decryptedMessage);
             lblSsDecryptTime.Text = (stopWatch.ElapsedTicks / (10 * Count)).ToString() + " ms";
        
-        //rsa
+            //rsa
             var encryptedMessageByRSA = Encoding.Default.GetBytes(ChipertextBox.Text);
-            var decryptedMessageByRSA = rsa.Decrypt(encryptedMessageByRSA, true);
-
+            var decryptedMessageByRSA = rsa.Decrypt(rsaEncryptedMessage,true);
             stopWatch.Reset();
             stopWatch.Start();
             for (var i = 0; i < Count; i++)
             {
-                decryptedMessageByRSA = rsa.Decrypt(encryptedMessageByRSA, true);
+             decryptedMessageByRSA = rsa.Decrypt(rsaEncryptedMessage, true);
             }
             stopWatch.Stop();
-
             txtPlainText.Text = Encoding.Default.GetString(decryptedMessageByRSA);
             lblRSAdecTime.Text = (stopWatch.ElapsedTicks / (10 * Count)).ToString() + " ms";
-        
         }
+
+      
       
         
     }

@@ -9,35 +9,21 @@ namespace SchmidtSamoa
     public class SchmidtSamoa       
     {
         private BigInteger p, q, N, L, d;
-        private BigInteger unu = new BigInteger("1");
-
-        //public int lcm(int p, int q)
-        //{
-        //    int num1, num2;
-        //    if (p > q)
-        //    {
-        //        num1 = p; num2 = q;
-        //    }
-        //    else
-        //    {
-        //        num1 = q; num2 = p;
-        //    }
-
-        //    for (int i = 1; i < num2; i++)
-        //    {
-        //        if ((num1 * i) % num2 == 0)
-        //        {
-        //            return i * num1;
-        //        }
-        //    }
-        //    return num1 * num2;
-
-        //}
+        private BigInteger bigInt = new BigInteger("1");
 
         private BigInteger lcm(BigInteger p, BigInteger q)
         {
             BigInteger gcd = p.Gcd(q);
             return ((p.Multiply(q)).Divide(gcd));
+        }
+
+        public SchmidtSamoa(int k)
+        {
+            p = BigInteger.ProbablePrime(k / 2, new Random()); // k ?
+            q = BigInteger.ProbablePrime(k, new Random());  // 
+            N = (p.Pow(2).Multiply(q));
+            L = lcm(p.Subtract(bigInt), (q.Subtract(bigInt)));
+            d = N.ModInverse(L);
         }
 
         public byte[] Encrypt(byte[] message)
@@ -55,13 +41,6 @@ namespace SchmidtSamoa
             return m.ToByteArray();
         }
 
-        public SchmidtSamoa(int k)
-        {
-            p = BigInteger.ProbablePrime(k /2, new Random());  //de ce e k/2
-            q = BigInteger.ProbablePrime(k /4, new Random());  // de ce e k/4
-            N = (p.Pow(2).Multiply(q));
-            L = lcm(p.Subtract(unu), (q.Subtract(unu)));
-            d = N.ModInverse(L);
-        }
+        
     }
 }
